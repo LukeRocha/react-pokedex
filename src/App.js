@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
-import './App.css';
-import ReactDOM from 'react-dom';
 import PokemonThumbNail from './components/PokemonThumbNail';
+import Button from '@material-ui/core/Button';
+import './App.css';
 
 function App() {
   const [allPokemons, setAllPokemons] = useState([])
@@ -30,7 +30,7 @@ function App() {
 
   return (
     <div className="app-container">
-      <h1>Pokédex</h1>
+      <h1 className="title">Pokédex</h1>
       <div className="pokemon-container">
         <div className="all-container">
           {allPokemons.sort((a, b) => a.id > b.id? 1 : -1).map((pokemon, index) => 
@@ -43,7 +43,9 @@ function App() {
             />
           )}
         </div>
-        <button onClick={() => getPokemons()} className="load-more">Load more</button>
+        <Button onClick={() => getPokemons()} className="load-more">
+          Load more
+        </Button>
       </div>
     </div>
   );
