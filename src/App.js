@@ -22,7 +22,6 @@ function App() {
      });
     }
       createPokemonObject(data.results)
-      console.log(allPokemons)
   };
 
   useEffect(() =>{
@@ -34,7 +33,7 @@ function App() {
       <h1>Pokédex</h1>
       <div className="pokemon-container">
         <div className="all-container">
-          {allPokemons.map((pokemon, index) => 
+          {allPokemons.sort((a, b) => a.id > b.id? 1 : -1).map((pokemon, index) => 
             <PokemonThumbNail 
               id={pokemon.id}
               name={pokemon.name}
@@ -44,7 +43,7 @@ function App() {
             />
           )}
         </div>
-        <button onClick={loadMore}className="load-more">Load more</button>
+        <button onClick={() => getPokemons()} className="load-more">Load more</button>
       </div>
     </div>
   );
