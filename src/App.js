@@ -29,7 +29,9 @@ function App() {
     const fetchPokemons = async () => {
     await getPokemons();
   } 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   fetchPokemons()
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   },[]);
 
   return (
