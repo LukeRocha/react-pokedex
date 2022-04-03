@@ -27,7 +27,7 @@ function App() {
   };
   useEffect( async() => {
     await getPokemons();
-  }, []);
+  });
 
   return (
     <div className="app-container">
