@@ -44,7 +44,7 @@ function App() {
                 <PokemonThumbNail
                   id={pokemon.id}
                   name={pokemon.name}
-                  image={pokemon.sprites.other.dream_world.front_default}
+                  image={pokemon.sprites.other['official-artwork'].front_default}
                   type={pokemon.types[0].type.name}
                   key={id}
                 />
@@ -52,7 +52,7 @@ function App() {
             })}
         </div>
       </div>
-      <button onClick={() => getPokemons()} type="button">
+      <button className="load-more" onClick={() => getPokemons()} type="button">
         Load more
       </button>
     </div>
