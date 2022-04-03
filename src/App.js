@@ -30,7 +30,7 @@ function App() {
       await getPokemons();
     }
     fetchData()
-  }, []);
+  });
 
   return (
     <div className="app-container">
