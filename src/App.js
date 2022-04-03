@@ -25,8 +25,8 @@ function App() {
     };
     createPokemonObject(data.results);
   };
-  useEffect(() => {
-    getPokemons();
+  useEffect( async() => {
+    await getPokemons();
   }, []);
 
   return (
